@@ -1,5 +1,13 @@
 name: Events Demo 1
 on: 
+  push:
+    branches:
+      - main #main
+      - 'dev-*' #dev-new dev-this-is-new
+      - 'feat/**' #feat/abc/123 
+    # paths-ignore: this path edit won't trigger
+    paths:
+      - '.github/workflows/*'
   pull_request:
     types:
       - opened
